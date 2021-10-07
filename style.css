@@ -31,7 +31,6 @@ body {
     justify-content: space-between;
 }
 
-
 main {
     display: flex;
     justify-content: center;
@@ -53,6 +52,16 @@ span {
     color: var(--stamina);
     font-weight: 300;
     padding: 8px;
+}
+
+.player-turn {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+#wich-player {
+    width: 16px;
 }
 
 .grid-table {
@@ -113,8 +122,7 @@ span {
      height: 24px;
      padding: 16px;
      border-radius: 4px;
-     box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.05);
-     
+     box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.05);   
  }
 
  footer {
