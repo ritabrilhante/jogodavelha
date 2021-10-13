@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,47 +16,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500&display=swap" rel="stylesheet">
 
     <script type="text/javascript" src="script.js" defer></script>
-
 </head>
+    <body>
+        <main>
 
-<body>
+            <h1>Jogo da Velha</h1>
+            <span>Clique para começar!</span>
 
-    <main>
-        <h1>Jogo da Velha</h1>
-        <span>Clique para começar!</span>
+            <section class="scoreboard">
 
-        <div class="scoreboard">
-            <div id="ball-player">
-                <img src="imagens/ball.svg">
-                <p id="result-ball">1</p>
+                <article id="ball-player">
+                    <img src="imagens/ball.svg">
+                    <p id="result-ball"></p>
+                </article>
+
+                <article id="xis-player">
+                    <img src="imagens/xis.svg">
+                    <p id="result-xis"></p>
+                </article>
+
+            </section>
+
+            <div class="player-turn">
+
+                <p>Vez de:</p>
+                <img id="wich-player" src="">
+
             </div>
 
-            <div id="xis-player">
-                <img src="imagens/xis.svg">
-                <p id="result-xis">1</p>
-            </div>
-        </div>
+            <table>
+                <tr id="row-1">
+                    <td id="a1" class="field" result=""></td>
+                    <td id="a2" class="field" result=""></td>
+                    <td id="a3" class="field" result=""></td>
+                </tr>
 
-        <div class="player-turn">
-            <p>Vez de:</p>
-            <img id="wich-player" src="">
-        </div>
+                <tr id="row-2">
+                    <td id="b1" class="field" result=""></td>
+                    <td id="b2" class="field" result=""></td>
+                    <td id="b3" class="field" result=""></td>
+                </tr>
 
-        <div id="table" class="grid-table">
-            <div id="a1" class="field" result=""></div>
-            <div id="a2" class="field" result=""></div>
-            <div id="a3" class="field" result=""></div>
-            <div id="b1" class="field" result=""></div>
-            <div id="b2" class="field" result=""></div>
-            <div id="b3" class="field" result=""></div>
-            <div id="c1" class="field" result=""></div>
-            <div id="c2" class="field" result=""></div>
-            <div id="c3" class="field" result=""></div>
-        </div>
-    </main>
-            
+                <tr id="row-3">
+                    <td id="c1" class="field" result=""></td>
+                    <td id="c2" class="field" result=""></td>
+                    <td id="c3" class="field" result=""></td>
+                </tr>
+            </table>
+        </main>
+
         <footer>Rita Brilhante | 2021</footer>
-        
-</body>
 
+
+
+        <!--Modal-->
+        <div class="active-modal">
+        <div id="winner-modal">
+            <h3 id="text-modal">O vencedor foi</h3>
+            <img id="winner-image" src="imagens/xis.svg">
+
+            <button id="refresh">
+                <img src="imagens/repeat.svg">
+                Jogar Novamente
+            </button>
+        </div>
+    </div>
+
+    </body>
 </html>
