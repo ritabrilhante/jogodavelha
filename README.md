@@ -2,6 +2,6 @@
 
 Jogo da velha desenvolvido em HTML, CSS e JAVASCRIPT.
 
-
+Link: https://ritabrilhante.github.io/jogodavelha/
 
 
