@@ -24,14 +24,13 @@ const winState = [
 ]
 //Clean fields;
 function setRefreshBtn() {
-    btnRefresh.addEventListener("click",function(){
+
         const fieldByClass = [].slice.call(document.getElementsByClassName("field"))
 
         fieldByClass.forEach(field => field.innerHTML = "");
         document.getElementById("active").style.visibility = 'hidden';
 
         round = 0;
-    })
 }
 // Show wich player;
 showPlayerTurn()
@@ -43,17 +42,16 @@ function showPlayerTurn() {
 }
 
 function setFields() {
-    //Pegou todos os elementos com a classe "field" e atribuiu a um array
     const fieldsbyClass = document.getElementsByClassName("field")
 
-    //Para todo field do array fieldByClass;
+    //For all fields from array fieldByClass;
     for (let field of fieldsbyClass) {
 
         field.addEventListener("click", function(){
 
             round++;
 
-            //Verifiquei se o field está vazio.
+            //Verify if the field is empty;
             if (field.innerHTML !== "") return
 
             if (turnOf === player1) {
@@ -61,7 +59,7 @@ function setFields() {
 
                 const resultWinner = verifyWinner(player1,field)
 
-                //verify if there's not a winner, then a change the turnOf value.
+                //verify if there's not a winner, then change the turnOf value.
 
                 if (!resultWinner) turnOf = player2;
             }else {
@@ -69,7 +67,7 @@ function setFields() {
 
                 const resultWinner = verifyWinner(player2,field)
 
-                //verify if there's not a winner, then a change the turnOf value.
+                //verify if there's not a winner, then change the turnOf value.
                 if (!resultWinner) turnOf = player1;
             }
             if (round === 9) setWinner(null);
@@ -78,19 +76,21 @@ function setFields() {
         })
     }
 }
-//verificar quem ganhou
+//Verify who wins
 function verifyWinner(player,field){
     const fields = document.getElementsByClassName("field"); //get all fields from html;
     const groupsToCheck = winState.filter(state => state.includes(field.id));
     //.filter cria um novo array de arrays dos caso de vitória que possuem o id do campo clicado;
     //.include verifica se o array possui um id, e retorna o array.
 
+    //iterate the new array
     for(let group of groupsToCheck) {
+        //descontroi o array que possuem os 3ids
         const [id1,id2,id3] = group;
 
         if (fields[id1].innerHTML === fields[id2].innerHTML && fields[id1].innerHTML === fields[id3].innerHTML) {
             setWinner(player)
-            return true;
+            return true; //return of resultWinner
         };
     }
 
@@ -142,6 +142,7 @@ function resetScoreboard() {
     player1Wins = 0;
     player2Wins = 0;
 
+    setRefreshBtn();
     updateScoreboard();
 }
 
