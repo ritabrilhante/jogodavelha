@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo da Velha</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jogo da Velha</title>
 
-    <!--FavIcon-->
-    <link href="https://app.basement.io/favicon.ico" rel="icon" type="image/x-icon">
+        <!--FavIcon-->
+        <link href="https://app.basement.io/favicon.ico" rel="icon" type="image/x-icon">
 
-    <!--CSS HERE-->
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500&display=swap" rel="stylesheet">
+        <!--CSS-->
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500&display=swap" rel="stylesheet">
 
-    <script type="text/javascript" src="script.js" defer></script>
-</head>
+        <!--Scripts-->
+        <script type="text/javascript" src="script.js" defer></script>
+    </head>
+
     <body>
         <main>
-
             <h1>Jogo da Velha</h1>
             <span>Clique para começar!</span>
 
             <section class="scoreboard">
 
-                <article id="ball-player">
-                    <img src="imagens/ball.svg">
-                    <p id="result-ball"></p>
-                </article>
-
                 <article id="xis-player">
                     <img src="imagens/xis.svg">
                     <p id="result-xis"></p>
+                </article>
+
+                <article id="ball-player">
+                    <img src="imagens/ball.svg">
+                    <p id="result-ball"></p>
                 </article>
 
             </section>
@@ -63,24 +64,24 @@
                     <td id="c3" class="field" result=""></td>
                 </tr>
             </table>
+
+            <button id="reset-scoreboard" onclick="resetScoreboard()">Zerar Placar</button>
         </main>
 
         <footer>Rita Brilhante | 2021</footer>
 
-
-
         <!--Modal-->
-        <div class="active-modal">
-        <div id="winner-modal">
-            <h3 id="text-modal">O vencedor foi</h3>
-            <img id="winner-image" src="imagens/xis.svg">
+        <div class="active-modal" id="active">
+            <div id="winner-modal">
+                <h3 id="text-modal">O vencedor foi</h3>
+                <img id="winner-image" src="imagens/xis.svg">
 
-            <button id="refresh">
-                <img src="imagens/repeat.svg">
-                Jogar Novamente
-            </button>
+                <button id="refresh">
+                    <img src="imagens/repeat.svg">
+                    Jogar Novamente
+                </button>
+            </div>
         </div>
-    </div>
 
     </body>
 </html>
