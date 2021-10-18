@@ -141,9 +141,11 @@ function updateScoreboard() {
 function resetScoreboard() {
     player1Wins = 0;
     player2Wins = 0;
+    turnOf = player1;
 
     setRefreshBtn();
     updateScoreboard();
+    showPlayerTurn();
 }
 
 setFields();
